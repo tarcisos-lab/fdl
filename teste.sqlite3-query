@@ -1,0 +1,7 @@
+-- database: /path/to/database.db
+
+-- database: c:\Users\tarci\OneDrive\Desktop\fdl\sqlite.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT * FROM "table-name";

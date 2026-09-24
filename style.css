@@ -1,0 +1,1679 @@
+:root {
+
+    --primary: #635bff;
+    --primary-dark: #5148e8;
+
+    --secondary: #8b5cf6;
+
+    --background: #f8f9fc;
+
+    --card: #ffffff;
+
+    --text: #161625;
+
+    --text-light: #707084;
+
+    --border: #e8e8f0;
+
+    --success: #22c55e;
+
+    --shadow:
+        0 20px 50px rgba(40, 40, 80, .08);
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+}
+
+
+button,
+input,
+select {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+.container {
+
+    width: min(1180px, 92%);
+
+    margin: auto;
+
+}
+
+
+/* HEADER */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.92);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.nav {
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.logo > span > span {
+
+    color: var(--primary);
+
+}
+
+
+.logo-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #626274;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+
+nav a:hover {
+
+    color: var(--primary);
+
+}
+
+
+.nav-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.btn-primary,
+.btn-outline,
+.btn-secondary {
+
+    border: 0;
+
+    border-radius: 11px;
+
+    padding: 11px 18px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .2s;
+
+}
+
+
+.btn-primary {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 8px 20px rgba(99,91,255,.22);
+
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(99,91,255,.3);
+
+}
+
+
+.btn-outline {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+}
+
+
+.btn-outline:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+.btn-secondary {
+
+    background: #eeeeff;
+
+    color: var(--primary);
+
+}
+
+
+.btn-large {
+
+    padding: 15px 23px;
+
+}
+
+
+.menu-mobile {
+
+    display: none;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 24px;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    padding: 90px 0 110px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(139,92,246,.12),
+            transparent 35%
+        );
+
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+.badge {
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    background: #eeeeff;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    max-width: 650px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--primary);
+
+}
+
+
+.hero p {
+
+    color: var(--text-light);
+
+    font-size: 17px;
+
+    max-width: 590px;
+
+    margin: 25px 0 30px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-stats {
+
+    display: flex;
+
+    gap: 45px;
+
+    margin-top: 45px;
+
+}
+
+
+.hero-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.hero-stats strong {
+
+    font-size: 25px;
+
+}
+
+
+.hero-stats span {
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+}
+
+
+/* DASHBOARD */
+
+.hero-card {
+
+    position: relative;
+
+    min-height: 470px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.main-dashboard {
+
+    width: 390px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 30px 70px rgba(40,40,90,.15);
+
+}
+
+
+.dashboard-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.dashboard-header small {
+
+    color: var(--text-light);
+
+}
+
+
+.dashboard-header h3 {
+
+    margin-top: 3px;
+
+}
+
+
+.teacher-avatar {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+.calendar {
+
+    margin-top: 30px;
+
+}
+
+
+.calendar-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.week,
+.days {
+
+    display: grid;
+
+    grid-template-columns: repeat(5,1fr);
+
+    text-align: center;
+
+    gap: 8px;
+
+}
+
+
+.week span {
+
+    font-size: 9px;
+
+    color: #9999a8;
+
+}
+
+
+.days {
+
+    margin-top: 12px;
+
+}
+
+
+.days span {
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+}
+
+
+.days .active {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+.appointment {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #f7f7fc;
+
+}
+
+
+.appointment-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 10px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--primary);
+
+    background: #e9e8ff;
+
+}
+
+
+.appointment div:nth-child(2) {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.appointment small {
+
+    color: var(--text-light);
+
+}
+
+
+.floating-card {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.floating-card small {
+
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+.card-one {
+
+    top: 25px;
+
+    left: 0;
+
+}
+
+
+.card-one > i {
+
+    color: var(--success);
+
+}
+
+
+.card-two {
+
+    bottom: 30px;
+
+    right: 0;
+
+}
+
+
+.check {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    background: var(--success);
+
+}
+
+
+/* SEÇÕES */
+
+.section {
+
+    padding: 100px 0;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.section-heading p {
+
+    max-width: 400px;
+
+    color: var(--text-light);
+
+}
+
+
+.section-label {
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* DISCIPLINAS */
+
+.subjects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.subject-card {
+
+    text-align: left;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    transition: .25s;
+
+}
+
+
+.subject-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+
+    border-color: transparent;
+
+}
+
+
+.subject-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 15px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 20px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.purple {
+
+    color: #635bff;
+
+    background: #eeeeff;
+
+}
+
+
+.blue {
+
+    color: #3b82f6;
+
+    background: #eaf2ff;
+
+}
+
+
+.green {
+
+    color: #16a34a;
+
+    background: #eaf9ef;
+
+}
+
+
+.orange {
+
+    color: #ea580c;
+
+    background: #fff1e9;
+
+}
+
+
+.subject-card h3 {
+
+    font-size: 17px;
+
+}
+
+
+.subject-card p {
+
+    font-size: 13px;
+
+    color: var(--text-light);
+
+    margin: 8px 0 20px;
+
+}
+
+
+.subject-card span {
+
+    font-size: 12px;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+/* PROFESSORES */
+
+.teachers-section {
+
+    background: white;
+
+}
+
+
+.teachers {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.teacher-card {
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: white;
+
+}
+
+
+.teacher-image {
+
+    height: 180px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 65px;
+
+    color: white;
+
+}
+
+
+.purple-bg {
+
+    background:
+        linear-gradient(
+            135deg,
+            #635bff,
+            #9b8cff
+        );
+
+}
+
+
+.blue-bg {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
+
+}
+
+
+.green-bg {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #34d399
+        );
+
+}
+
+
+.teacher-info {
+
+    padding: 20px;
+
+}
+
+
+.teacher-info h3 {
+
+    font-size: 17px;
+
+}
+
+
+.teacher-info > span {
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+}
+
+
+.rating {
+
+    margin: 12px 0;
+
+    color: #f59e0b;
+
+    font-size: 13px;
+
+}
+
+
+.rating small {
+
+    color: var(--text-light);
+
+    margin-left: 5px;
+
+}
+
+
+.teacher-button {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: #f0efff;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+/* AGENDAMENTO */
+
+.booking-section {
+
+    padding: 100px 0;
+
+}
+
+
+.booking-card {
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 70px;
+
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111126,
+            #24204c
+        );
+
+    color: white;
+
+    box-shadow:
+        0 30px 70px rgba(20,20,60,.2);
+
+}
+
+
+.booking-info h2 {
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.booking-info p {
+
+    color: #bdbbd1;
+
+    margin: 20px 0 30px;
+
+}
+
+
+.booking-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+}
+
+
+.booking-features i {
+
+    color: #8b7cff;
+
+    margin-right: 8px;
+
+}
+
+
+.booking-form {
+
+    padding: 30px;
+
+    background: white;
+
+    color: var(--text);
+
+    border-radius: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.form-group label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(99,91,255,.1);
+
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.submit-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+}
+
+
+/* BENEFÍCIOS */
+
+.benefits {
+
+    padding-top: 20px;
+
+}
+
+
+.benefits-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+
+}
+
+
+.benefit {
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+}
+
+
+.benefit-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--primary);
+
+    background: #eeeeff;
+
+    border-radius: 13px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.benefit h3 {
+
+    font-size: 17px;
+
+}
+
+
+.benefit p {
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-top: 7px;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    padding: 35px 0;
+
+    background: #111126;
+
+    color: white;
+
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.footer-content p {
+
+    color: #9999aa;
+
+    font-size: 12px;
+
+}
+
+
+/* MODAL */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(10,10,25,.65);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 3000;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-box {
+
+    position: relative;
+
+    width: min(420px,100%);
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: 0 30px 70px rgba(0,0,0,.2);
+
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 28px;
+
+    color: #888;
+
+}
+
+
+.modal-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    color: var(--primary);
+
+    background: #eeeeff;
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-box h2 {
+
+    font-size: 26px;
+
+}
+
+
+.modal-box > p {
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.modal-box form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.modal-box input {
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+}
+
+
+.modal-link {
+
+    margin-top: 20px !important;
+
+    text-align: center;
+
+}
+
+
+.modal-link button {
+
+    border: 0;
+
+    background: none;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+/* TOAST */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 20px;
+
+    border-radius: 12px;
+
+    background: #161625;
+
+    color: white;
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    transition: .3s;
+
+    z-index: 5000;
+
+}
+
+
+.toast.active {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+}
+
+
+.toast i {
+
+    color: #22c55e;
+
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width: 900px) {
+
+    nav,
+    .nav-buttons {
+
+        display: none;
+
+    }
+
+
+    .menu-mobile {
+
+        display: block;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero-card {
+
+        min-height: 400px;
+
+    }
+
+
+    .subjects {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .teachers {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .booking-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .hero {
+
+        padding-top: 55px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .main-dashboard {
+
+        width: 100%;
+
+    }
+
+
+    .floating-card {
+
+        display: none;
+
+    }
+
+
+    .subjects {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .benefits-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .section-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .booking-card {
+
+        padding: 25px;
+
+    }
+
+
+    .booking-info h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .booking-form {
+
+        padding: 20px;
+
+    }
+
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+}

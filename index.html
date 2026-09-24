@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fora do Lápis | Agendamento de Aulas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container nav">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>Fora do Lápis</span>
+        </div>
+
+        <nav id="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#disciplinas">Disciplinas</a>
+            <a href="#professores">Professores</a>
+            <a href="#agendar">Agendar</a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <button class="btn-outline" onclick="abrirLogin()">
+                Entrar
+            </button>
+
+            <button class="btn-primary" onclick="abrirCadastro()">
+                Criar conta
+            </button>
+
+        </div>
+
+        <button class="menu-mobile" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section id="inicio" class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <i class="fa-solid fa-sparkles"></i>
+                Aprenda de forma inteligente
+            </div>
+
+            <h1>
+                Sua próxima aula
+                <span>começa aqui.</span>
+            </h1>
+
+            <p>
+                Encontre professores, escolha o melhor horário
+                e agende suas aulas extracurriculares de forma
+                simples e rápida.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="btn-primary btn-large"
+                    onclick="irParaAgendamento()"
+                >
+                    Agendar aula
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button
+                    class="btn-secondary btn-large"
+                    onclick="document.getElementById('disciplinas').scrollIntoView()"
+                >
+                    Explorar disciplinas
+                </button>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>+20</strong>
+                    <span>Professores</span>
+                </div>
+
+                <div>
+                    <strong>+500</strong>
+                    <span>Alunos</span>
+                </div>
+
+                <div>
+                    <strong>4.9</strong>
+                    <span>Avaliação</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="floating-card card-one">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div>
+                    <strong>Aula confirmada</strong>
+                    <small>Matemática • 14:00</small>
+                </div>
+            </div>
+
+            <div class="main-dashboard">
+
+                <div class="dashboard-header">
+
+                    <div>
+                        <small>Próxima aula</small>
+                        <h3>Matemática</h3>
+                    </div>
+
+                    <div class="teacher-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                </div>
+
+                <div class="calendar">
+
+                    <div class="calendar-top">
+                        <strong>Setembro 2026</strong>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="week">
+                        <span>SEG</span>
+                        <span>TER</span>
+                        <span>QUA</span>
+                        <span>QUI</span>
+                        <span>SEX</span>
+                    </div>
+
+                    <div class="days">
+
+                        <span>14</span>
+                        <span>15</span>
+                        <span class="active">16</span>
+                        <span>17</span>
+                        <span>18</span>
+
+                    </div>
+
+                </div>
+
+                <div class="appointment">
+
+                    <div class="appointment-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <strong>Matemática</strong>
+                        <small>Prof. Gabriel</small>
+                    </div>
+
+                    <strong>14:00</strong>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card card-two">
+
+                <div class="check">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Agendamento</strong>
+                    <small>Realizado com sucesso</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="disciplinas" class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">ESCOLHA SUA ÁREA</span>
+
+                <h2>
+                    O que você quer aprender?
+                </h2>
+            </div>
+
+            <p>
+                Escolha uma disciplina e encontre professores
+                disponíveis para uma aula.
+            </p>
+
+        </div>
+
+
+        <div class="subjects">
+
+            <button
+                class="subject-card"
+                onclick="selecionarDisciplina('Matemática')"
+            >
+
+                <div class="subject-icon purple">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <h3>Matemática</h3>
+                <p>Álgebra, geometria e muito mais.</p>
+
+                <span>Ver professores →</span>
+
+            </button>
+
+
+            <button
+                class="subject-card"
+                onclick="selecionarDisciplina('Português')"
+            >
+
+                <div class="subject-icon blue">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <h3>Português</h3>
+                <p>Gramática, literatura e redação.</p>
+
+                <span>Ver professores →</span>
+
+            </button>
+
+
+            <button
+                class="subject-card"
+                onclick="selecionarDisciplina('Inglês')"
+            >
+
+                <div class="subject-icon green">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <h3>Inglês</h3>
+                <p>Conversação e preparação.</p>
+
+                <span>Ver professores →</span>
+
+            </button>
+
+
+            <button
+                class="subject-card"
+                onclick="selecionarDisciplina('Física')"
+            >
+
+                <div class="subject-icon orange">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+
+                <h3>Física</h3>
+                <p>Teoria e resolução de exercícios.</p>
+
+                <span>Ver professores →</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="professores" class="section teachers-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    PROFESSORES
+                </span>
+
+                <h2>
+                    Aprenda com quem entende
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="teachers">
+
+            <div class="teacher-card">
+
+                <div class="teacher-image purple-bg">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="teacher-info">
+
+                    <h3>Gabriel Santos</h3>
+
+                    <span>Matemática</span>
+
+                    <div class="rating">
+                        ★★★★★
+                        <small>4.9</small>
+                    </div>
+
+                    <button
+                        onclick="selecionarProfessor('Gabriel Santos')"
+                        class="teacher-button"
+                    >
+                        Agendar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="teacher-card">
+
+                <div class="teacher-image blue-bg">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="teacher-info">
+
+                    <h3>Mariana Oliveira</h3>
+
+                    <span>Português</span>
+
+                    <div class="rating">
+                        ★★★★★
+                        <small>4.8</small>
+                    </div>
+
+                    <button
+                        onclick="selecionarProfessor('Mariana Oliveira')"
+                        class="teacher-button"
+                    >
+                        Agendar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="teacher-card">
+
+                <div class="teacher-image green-bg">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="teacher-info">
+
+                    <h3>Lucas Almeida</h3>
+
+                    <span>Inglês</span>
+
+                    <div class="rating">
+                        ★★★★★
+                        <small>5.0</small>
+                    </div>
+
+                    <button
+                        onclick="selecionarProfessor('Lucas Almeida')"
+                        class="teacher-button"
+                    >
+                        Agendar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="agendar" class="booking-section">
+
+    <div class="container">
+
+        <div class="booking-card">
+
+            <div class="booking-info">
+
+                <span class="section-label">
+                    AGENDAMENTO
+                </span>
+
+                <h2>
+                    Agende sua próxima aula
+                </h2>
+
+                <p>
+                    Escolha a disciplina, professor, data
+                    e horário que melhor funcionam para você.
+                </p>
+
+                <div class="booking-features">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Horários flexíveis
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Professores avaliados
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Agendamento rápido
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form id="bookingForm" class="booking-form">
+
+                <div class="form-group">
+
+                    <label for="discipline">
+                        Disciplina
+                    </label>
+
+                    <select id="discipline" required>
+
+                        <option value="">
+                            Selecione uma disciplina
+                        </option>
+
+                        <option value="Matemática">
+                            Matemática
+                        </option>
+
+                        <option value="Português">
+                            Português
+                        </option>
+
+                        <option value="Inglês">
+                            Inglês
+                        </option>
+
+                        <option value="Física">
+                            Física
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacher">
+                        Professor
+                    </label>
+
+                    <select id="teacher" required>
+
+                        <option value="">
+                            Selecione um professor
+                        </option>
+
+                        <option value="Gabriel Santos">
+                            Gabriel Santos
+                        </option>
+
+                        <option value="Mariana Oliveira">
+                            Mariana Oliveira
+                        </option>
+
+                        <option value="Lucas Almeida">
+                            Lucas Almeida
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Data
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Horário
+                        </label>
+
+                        <select id="time" required>
+
+                            <option value="">
+                                Horário
+                            </option>
+
+                            <option value="08:00">
+                                08:00
+                            </option>
+
+                            <option value="10:00">
+                                10:00
+                            </option>
+
+                            <option value="14:00">
+                                14:00
+                            </option>
+
+                            <option value="16:00">
+                                16:00
+                            </option>
+
+                            <option value="18:00">
+                                18:00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="studentName">
+                        Nome do aluno
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="studentEmail">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        placeholder="seuemail@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary submit-button"
+                >
+
+                    Confirmar agendamento
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section benefits">
+
+    <div class="container">
+
+        <div class="benefits-grid">
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <h3>Horários flexíveis</h3>
+
+                <p>
+                    Escolha o melhor horário para estudar.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+
+                <h3>Professores qualificados</h3>
+
+                <p>
+                    Encontre professores preparados para ajudar.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>Agendamento rápido</h3>
+
+                <p>
+                    Marque sua aula em poucos segundos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>Fora do Lápis</span>
+
+        </div>
+
+        <p>
+            © 2026 Aula+. Todos os direitos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- MODAL LOGIN -->
+
+<div id="loginModal" class="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="fecharModal('loginModal')"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-to-bracket"></i>
+        </div>
+
+        <h2>Bem-vindo de volta!</h2>
+
+        <p>Entre na sua conta para continuar.</p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Sua senha"
+                required
+            >
+
+            <button class="btn-primary">
+                Entrar
+            </button>
+
+        </form>
+
+        <p class="modal-link">
+            Ainda não possui conta?
+            <button onclick="trocarParaCadastro()">
+                Criar conta
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- MODAL CADASTRO -->
+
+<div id="registerModal" class="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="fecharModal('registerModal')"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <h2>Criar sua conta</h2>
+
+        <p>Comece a organizar suas aulas.</p>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Seu nome"
+                required
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Crie uma senha"
+                required
+            >
+
+            <button class="btn-primary">
+                Criar conta
+            </button>
+
+        </form>
+
+        <p class="modal-link">
+            Já possui uma conta?
+            <button onclick="trocarParaLogin()">
+                Entrar
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- NOTIFICAÇÃO -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Operação realizada!
+    </span>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
